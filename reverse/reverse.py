@@ -39,4 +39,17 @@ class LinkedList:
         return False
 
     def reverse_list(self, node, prev):
-        pass
+        if not self.head:
+            return False
+        
+        #while loop
+        while node != None:
+            prev = node
+            #add prev value to head instead of current value
+            self.add_to_head(prev.value)
+            node = prev.next_node
+
+    # this is O(n) Linear as it grows in direct proportion and only loops through list once
+    # could also do this recursively but would be same complexity outcome.
+
+
