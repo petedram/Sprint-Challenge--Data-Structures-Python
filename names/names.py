@@ -93,11 +93,41 @@ print (f"runtime: {end_time - start_time} seconds")
 #             duplicates.append(name_1)
 
 # runtime complexity of original code is: O(n^2) Quadratic due to the nested loops
+# runtime complexity of BST is O(n) Linear as it grows in direct proportion to n
 
 # ---------- Stretch Goal -----------
 # Python has built-in tools that allow for a very efficient approach to this problem
 # What's the best time you can accomplish?  
-# best time 0.13s
-
 # Thare are no restrictions on techniques or data
 # structures, but you may not import any additional libraries that you did not write yourself.
+
+# best time 0.13s
+
+
+# if can only store names in array:
+
+f = open('names_1.txt', 'r')
+first = f.readline()
+array1 = []
+for name in f: #read each line in the file
+        array1.append(name) #add each line to the array
+f.close()
+
+f = open('names_2.txt', 'r')
+array2 = []
+for name in f: #read each line in the file
+        array2.append(name) #add each line to the array
+f.close()
+
+#built in methods only - set and len
+first_list = set(array1)
+second_list = set(array2)
+len(first_list & second_list) #sets the intersection which is the common names
+
+
+end_time = time.time()
+print (len(first_list & second_list))
+print (f"runtime: {end_time - start_time} seconds")
+
+
+
